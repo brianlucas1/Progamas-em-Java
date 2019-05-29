@@ -1,0 +1,16 @@
+ // VALIDAÇÃO DA PLACA DE CARRO
+ public static boolean validaPlaca(String placa){
+   placa = placa.replaceAll("[^a-zA-Z0-9]", "");
+   // TAMANHO DA PLACA
+   if(placa.length() != 7){
+      return false;
+   }
+   // DEFININDO OS 3 PRIMEIROS LETRAS
+   if(!placa.substring(0, 3).matches("[A-Z]*")){
+      return false;
+   }
+   // DEFINE 4 ULTIMOS DIGITOS COMO NUMEROS
+   return placa.substring(3).matches("[0-9]*");
+}
+    
+}
